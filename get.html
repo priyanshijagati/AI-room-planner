@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Get Started</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    <script src="result.js"></script>
+    <style>
+        body {
+            background-color: #8e7c6e;
+            background-image: url(images/Luxury\ living\ room.jpeg); 
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: inherit; 
+            filter: blur(3px); 
+            z-index: -1; 
+        }
+        .logo{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 50%; 
+          height: 50%;
+        }
+
+
+    .upload-container h2, .result-container h2 {
+      margin-bottom: 10px;
+    }
+    #image-preview, #result-preview {
+      width: 400px;
+      height: 300px;
+      border: 0.5px solid #ccc;
+      display: block;
+      margin: 20px auto;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .upload-container button{
+        background-color: rgb(0, 0, 0);
+        color: white;
+        width: 100px;
+    }
+    
+    .upload-container, .result-container
+    {
+      
+      text-align: center;
+      background-color: rgb(255, 255, 255);
+      padding: 20px;
+      border-radius: 8px;
+      
+      margin: 10px;
+    }
+    .result-container{
+      height: 500px ;
+    }
+    .choose{
+      display: flex;
+      color: white;
+      
+      
+    }
+    .choose select {
+      
+    padding: 8px; /* Adjust padding as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ccc; /* Border style */
+    width: 200px; /* Set width as needed */
+}
+.navbar{
+  text-decoration: none;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -40%;
+  
+  
+}
+    
+   
+
+
+  </style>
+
+</head>
+
+<body>
+     
+    <!-- <nav> 
+      <div class="logo">
+        <video src="images/Purple Minimalist Interior Design Logo .mp4" width="350" autoplay loop muted></video>
+      </div>
+   </nav> -->
+
+   <a class="navbar" href="index.html"><p>HOME  <i class="fa-solid fa-house"></i></p></a>
+   
+
+  
+    
+    
+
+      <div class="upload-container">
+        <h2>Upload an Image</h2>
+        <input type="file" accept="image/*" capture="camera" id="fileInput" onchange="previewImage(event)">
+        <img id="image-preview" src="images/mob.jpeg"  alt="Image Preview">
+
+        <div class="choose">
+      
+          <select name="roomType" id="roomTypeSelect">
+              <option value=" ">Select Room Type</option>
+              <option value="single">Living Room</option>
+              <option value="double">Bedroom</option>
+              <option value="suite">Bathroom</option>
+              <option value="suite">Kitchen</option>
+              <option value="suite">Dining room</option>
+             
+          </select>
+          
+          
+          <button onclick="submitImage()">Enter</button>
+        </div>
+      
+        <div> 
+          <br>
+          <!-- <button>SUBMIT</button>  -->
+        </div>
+
+      </div>
+    
+      <div class="result-container">
+        <h2>Result</h2>
+        <img id="result-preview" src="https://via.placeholder.com/300" alt="No Image">
+
+      </div>
+
+    </div>
+
+    
+
+
+  <script>
+    let uploadedImageURL = ""; // Variable to store uploaded image URL
+
+    function previewImage(event) {
+      const input = event.target;
+      const preview = document.querySelector('#image-preview');
+      const file = input.files[0];
+      const reader = new FileReader();
+
+      reader.onload = function() {
+        preview.src = reader.result;
+        uploadedImageURL = reader.result; // Store the uploaded image URL
+      }
+
+      if (file) {
+        reader.readAsDataURL(file);
+      } else {
+        preview.src = "";
+      }
+    }
+
+    function submitImage() {
+      const resultPreview = document.querySelector('#result-preview');
+      resultPreview.src = uploadedImageURL; // Set the result image source to the uploaded image URL
+    }
+  </script>
+</body>
+</html>

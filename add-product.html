@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reclaim MartS - Add Product</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
+      </style>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/product.css">
+    <link rel="stylesheet" href="add-product.css">
+</head>
+<body>
+    
+
+        <img src="../img/loading.gif" class="loader" alt="">
+
+        <h1 class="title">add product</h1>
+
+        <div class="error">
+            <p>some error occured</p>
+        </div>
+        
+        <section class="product-section">
+            <!-- upload image section -->
+            <div class="image-upload-container">
+                <input type="file" id="upload-image" accept="image/*" hidden >
+                <label for="upload-image" class="upload-overlay">upload image</label>
+                <img class="product-img" alt="">
+                
+            </div>
+
+            <div class="product-detail">
+                <h1 class="product-title" contenteditable="true" data-placeholder="product name">Premium sofa</h1>
+                <p class="product-des" contenteditable="true" data-placeholder="short description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam impedit illum, nemo placeat dolorem excepturi.</p>
+                <div class="rating disable">
+                    <img src="../img/fill star.png" class="star" alt="">
+                    <img src="../img/fill star.png" class="star" alt="">
+                    <img src="../img/fill star.png" class="star" alt="">
+                    <img src="../img/fill star.png" class="star" alt="">
+                    <img src="../img/no fill star.png " class="star" alt="">
+                    <span class="rating-count">1,056 reviews</span>
+                </div>
+                <p class="price" contenteditable="true" data-placeholder="price without ₹">₹1999</p>
+                <div class="btn-container disable">
+                    <button class="product-btn buy-btn">Buy Now</button>
+                    <button class="product-btn cart-btn">Add to cart</button>
+                </div>
+            </div>
+        </section>
+        
+        <section class="detail-des">
+            <h1 class="section-title">Details</h1>
+            <p class="des" contenteditable="true" data-placeholder="Details, you can add images using HTML tags"></p>
+        
+        </section>
+        
+        <section class="tags-section">
+            <h1 class="section-title">tags</h1>
+            <p class="text">enter some tags related to product.Give commas between tags.</p>
+            <p class="tags" contenteditable="true" data-placeholder="Details, you can add images using HTML tags">3 tags atleast</p>
+        
+        </section>
+
+        <div class="btn-wrapper">
+            <button class="product-btn add-product-btn">add product</button>
+            <button class="product-btn draft-btn">save draft</button>
+        </div>
+
+
+        
+        <script src="../js/add-product.js"></script>
+        <script src="../js/common.js"></script>
+        
+    
+</body>
+</html>

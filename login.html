@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Login and Signup Form </title>
+
+        <link rel="stylesheet" href="loginstyle.css">
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+                        
+    </head>
+    <body>
+        
+
+        <section class="container forms">
+             <div class="form login">  
+                 <div class="form-content"> 
+                     <header>Login</header> 
+
+                    <form onsubmit="sendEmail(); reset(); return false"> 
+
+                        <div class="field input-field">
+                            <input type="email" id="email" placeholder="Email" class="input" name="email" required>
+                        
+                        </div>
+
+                        <div class="field input-field">
+                            <input type="password" placeholder="Password" id="password" class="password" name="password" required>
+                            <i class='bx bx-hide eye-icon'></i>
+                        </div>
+
+                        <div class="form-link">
+                            <a href="#" class="forgot-pass">Forgot password?</a>
+                        </div>
+
+                        <div class="field button-field">
+                            <button>Login</button>
+                        </div>
+                    </form>
+
+                    <div class="form-link">
+                        <span>Don't have an account? <a href="#" class="link signup-link">Signup</a></span>
+                     </div> 
+                </div>
+
+            </div> 
+            <!-- Signup Form -->
+
+            <div class="form signup">
+                <div class="form-content">
+                    <header>Signup</header>
+                    <form onsubmit="sendEmail(); reset(); return false"> 
+
+                        <div class="field input-field">
+                            <input type="email" id="email" placeholder="Email" class="input" name="email" required>
+                        </div>
+
+                        <div class="field input-field">
+                            <input type="password" id="password" placeholder="Create password" class="password" name="password" required>
+                        </div>
+
+                        <div class="field input-field">
+                            <input type="password" id="password" placeholder="Confirm password" class="password" name="password" required>
+                            <i class='bx bx-hide eye-icon'></i>
+                        </div>
+
+                        <!-- Mob no -->
+                        <div class="field input-field">
+                            <input type="tel" id="mobno" placeholder="Mobile Number" class="input" name="mobile" required>
+                        </div>
+
+                        <!-- Gender -->
+                        <div class="field input-field" id="gender">
+                            <select id="gender" class="input" name="gender" name="gender" required>
+                                <option value="" disabled selected>Choose gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- DOB -->
+                        <div class="field input-field" id="dob">
+                            <input type="date" id="dob" class="input" name="dob" required>
+                        </div>
+            
+                        <div class="form-link">
+                            <a href="#" class="forgot-pass">Forgot password?</a>
+                        </div>
+
+                        <div class="field button-field">
+                            <button>Signup</button>
+                        </div>
+                    
+                    </form>
+
+                    <div class="form-link"> 
+                        <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
+                    </div> 
+                </div>
+          
+            </div>
+        </section>
+
+        <!-- JavaScript -->
+         
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script src="loginJavaS.js"></script>
+        <script>
+            function sendEmail(){
+                Email.send({
+                Host : "smtp.elasticemail.com",
+                Username : "priyanshijagati2@gmail.com",
+                Password : "C063E9514DD9EF4C5B48094044FD52E1DD3B",
+                To : 'priyanshijagati2@gmail.com',
+                From : document.getElementById("email").value,
+                Subject : "Contact Form Enquiry",
+                Body : "Email :" + document.getElementById("email").value 
+                + "<br> Password :" + document.getElementById("password").value
+                + "<br> Mobile-number :" + document.getElementById("mobno").value
+                + "<br> Gender :" + document.getElementById("gender").value
+                + "<br> Date-of-birth :" + document.getElementById("dob").value
+                }).then(
+                   message => alert("Signup successful")
+                );
+            }
+        </script> 
+        
+    </body>
+</html>
